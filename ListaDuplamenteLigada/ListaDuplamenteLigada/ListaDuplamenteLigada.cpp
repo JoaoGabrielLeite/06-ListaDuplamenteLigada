@@ -150,6 +150,15 @@ void inserirElemento()
 // funções a serem implementadas no exericio
 void exibirReverso()
 {
+	if (ultimo == NULL)
+	{
+		cout << "A lista esta vazia\n";
+		return;
+	}
+	else
+	{
+
+	}
 
 }
 
@@ -160,6 +169,14 @@ void excluirPrimeiroElemento()
 
 void excluirUltimoElemento()
 {
+	if (ultimo == NULL)
+	{
+		cout << "A Lista esta vazia\n";
+		return;
+	}
+	else
+	{
+	}
 
 }
 
