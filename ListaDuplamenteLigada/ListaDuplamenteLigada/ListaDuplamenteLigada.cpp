@@ -157,6 +157,12 @@ void exibirReverso()
 	}
 	else
 	{
+		cout << "Elementos: \n";
+		NO* aux = ultimo;
+		while (aux != NULL) {
+			cout << aux->valor << endl;
+			aux = aux->ant;
+		}
 
 	}
 
@@ -164,14 +170,46 @@ void exibirReverso()
 
 void excluirPrimeiroElemento()
 {
+	NO* paraexcluir = NULL;
 
+	if (primeiro == NULL)
+	{
+	cout << "Nao existe primeiro elemento ou nao existe lista.\n";
+		return;
+	}
+	else {
+		if (primeiro->prox != NULL)
+		{
+			paraexcluir = primeiro;
+			primeiro = primeiro->prox;
+			primeiro->ant = NULL;
+			free (paraexcluir);
+
+
+
+	
+			cout << "Fiuk Eliminado.\n";
+			return;
+		}
+		else
+		{
+			paraexcluir = primeiro;
+			primeiro = NULL;
+			ultimo = NULL;
+			free (paraexcluir);
+
+			cout << "Fiuk Eliminado 2.\n";
+			return;
+		}
+	}
+	
 }
 
 void excluirUltimoElemento()
 {
 	if (ultimo == NULL)
 	{
-		cout << "A Lista esta vazia\n";
+		cout << "Nao existe ultimo elemento ou nao existe lista.\n";
 		return;
 	}
 	else
@@ -179,9 +217,3 @@ void excluirUltimoElemento()
 	}
 
 }
-
-
-
-
-
-
