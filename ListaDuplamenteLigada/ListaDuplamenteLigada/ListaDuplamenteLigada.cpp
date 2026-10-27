@@ -188,7 +188,7 @@ void excluirPrimeiroElemento()
 
 
 	
-			cout << "Fiuk Eliminado.\n";
+			cout << "Elemento apagado.\n";
 			return;
 		}
 		else
@@ -198,7 +198,7 @@ void excluirPrimeiroElemento()
 			ultimo = NULL;
 			free (paraexcluir);
 
-			cout << "Fiuk Eliminado 2.\n";
+			cout << "Elemento apagado.\n";
 			return;
 		}
 	}
@@ -207,13 +207,36 @@ void excluirPrimeiroElemento()
 
 void excluirUltimoElemento()
 {
+	NO* paraexcluir = NULL;
+
 	if (ultimo == NULL)
 	{
-		cout << "Nao existe ultimo elemento ou nao existe lista.\n";
+		cout << "Nao existe primeiro elemento ou nao existe lista.\n";
 		return;
 	}
-	else
-	{
-	}
+	else {
+		if (ultimo->ant!= NULL)
+		{
+			paraexcluir = ultimo;
+			ultimo = ultimo->ant;
+			ultimo = NULL;
+			free(paraexcluir);
 
+
+
+
+			cout << "Elemento apagado.\n";
+			return;
+		}
+		else
+		{
+			paraexcluir = ultimo;
+			primeiro = NULL;
+			ultimo = NULL;
+			free(paraexcluir);
+
+			cout << "Elemento apagado.\n";
+			return;
+		}
+	}
 }
