@@ -188,7 +188,7 @@ void excluirPrimeiroElemento()
 
 
 	
-			cout << "Elemento apagado.\n";
+			cout << "Primeiro elemento apagado.\n";
 			return;
 		}
 		else
@@ -198,7 +198,7 @@ void excluirPrimeiroElemento()
 			ultimo = NULL;
 			free (paraexcluir);
 
-			cout << "Elemento apagado.\n";
+			cout << "Primeiro elemento apagado.\n";
 			return;
 		}
 	}
@@ -207,35 +207,30 @@ void excluirPrimeiroElemento()
 
 void excluirUltimoElemento()
 {
-	NO* paraexcluir = NULL;
-
-	if (ultimo == NULL)
-	{
+	if (ultimo == NULL) {
 		cout << "Nao existe primeiro elemento ou nao existe lista.\n";
 		return;
 	}
 	else {
-		if (ultimo->ant!= NULL)
-		{
-			paraexcluir = ultimo;
+		NO* paraExcluir;
+		if (primeiro->prox != NULL || ultimo->ant != NULL) {
+			paraExcluir = ultimo;
 			ultimo = ultimo->ant;
-			ultimo = NULL;
-			free(paraexcluir);
+			ultimo->prox = NULL;
 
+			cout << "Ultimo elemento apagado.";
 
-
-
-			cout << "Elemento apagado.\n";
+			free(paraExcluir);
 			return;
 		}
-		else
-		{
-			paraexcluir = ultimo;
+		else {
+			paraExcluir = ultimo;
 			primeiro = NULL;
 			ultimo = NULL;
-			free(paraexcluir);
 
-			cout << "Elemento apagado.\n";
+			cout << "Ultimo elemento apagado.\n";
+
+			free(paraExcluir);
 			return;
 		}
 	}
